@@ -47,9 +47,22 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../frontend')));
+app.get('*', (req, res) => {
+res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
 // Connect to DB and start server
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
+});
+
+process.on('SIGINT', async () => {
+  console.log('\n⏹ Shutting down...');
+  await mongoose.connection.close();
+  console.log('✓ MongoDB connection closed');
+  process.exit(0);
 });
