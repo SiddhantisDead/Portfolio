@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio — Computer Science & Cybersecurity student, Developer, and Motion Graphics Artist" />
+  <title>Portfolio | CS • Dev • VFX</title>
+
+  <!-- Fonts: Inter for body, Space Grotesk for headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ──────────────────────── Navigation ──────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ──────────────────────── Hero Section ──────────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Computer Science &amp; Cybersecurity Student</p>
+      <h1 class="hero-title">
+        I build <span class="text-glow">software</span>,
+        <br />shape <span class="text-glow-alt">visuals</span>,
+        <br />and break things
+        <br />to understand them.
+      </h1>
+      <p class="hero-subtitle">
+        Developer &amp; Motion Graphics Artist — where code meets craft.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-gradient"></div>
+  </section>
+
+  <!-- ──────────────────────── Skills Section ──────────────────────── -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Expertise</h2>
+      <p class="section-subtitle">A dual skillset bridging systems-level engineering and visual storytelling.</p>
+
+      <div class="skills-grid">
+        <!-- Dev Skills -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              <line x1="12" y1="2" x2="12" y2="22"/>
+            </svg>
+          </div>
+          <h3 class="skill-card-title">Development &amp; Systems</h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Java</li>
+            <li class="skill-tag">C</li>
+            <li class="skill-tag">C++</li>
+            <li class="skill-tag">Python</li>
+            <li class="skill-tag">SQL</li>
+            <li class="skill-tag">Assembly</li>
+            <li class="skill-tag">JavaScript</li>
+            <li class="skill-tag">Linux (Arch / Manjaro)</li>
+            <li class="skill-tag">Node.js</li>
+            <li class="skill-tag">Git</li>
+          </ul>
+        </div>
+
+        <!-- VFX Skills -->
+        <div class="skill-card">
+          <div class="skill-card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="skill-card-title">VFX &amp; Motion Design</h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">After Effects</li>
+            <li class="skill-tag">Cinema 4D</li>
+            <li class="skill-tag">Blender</li>
+            <li class="skill-tag">DaVinci Resolve</li>
+            <li class="skill-tag">Motion Graphics</li>
+            <li class="skill-tag">3D Modeling</li>
+            <li class="skill-tag">Compositing</li>
+            <li class="skill-tag">Color Grading</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── Projects Section ──────────────────────── -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">A selection of work spanning code, security, and visuals.</p>
+
+      <!-- Category filter buttons -->
+      <div class="project-filters" id="projectFilters">
+        <button class="filter-btn active" data-category="">All</button>
+        <button class="filter-btn" data-category="dev">Dev</button>
+        <button class="filter-btn" data-category="cybersec">Cybersec</button>
+        <button class="filter-btn" data-category="vfx">VFX</button>
+      </div>
+
+      <!-- Project cards grid — populated by JS -->
+      <div class="project-grid" id="projectGrid">
+        <!-- Skeleton loaders rendered by JS -->
+      </div>
+
+      <!-- Empty state (hidden by default) -->
+      <div class="project-empty" id="projectEmpty" hidden>
+        <p>No projects found in this category.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── Contact Section ──────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Have a project in mind or just want to say hi? Drop me a message.</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-input" required placeholder="Your name" autocomplete="name" />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" required placeholder="you@example.com" autocomplete="email" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" />
+        </div>
+        <div class="form-group">
+          <label for="body" class="form-label">Message</label>
+          <textarea id="body" name="body" class="form-input form-textarea" required placeholder="Tell me about your project or idea..." rows="5"></textarea>
+          <span class="form-error" id="bodyError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-spinner" hidden></span>
+        </button>
+        <div class="form-feedback" id="formFeedback" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ──────────────────────── Footer ──────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; <span id="currentYear"></span> — Built from scratch. No templates, no frameworks.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
